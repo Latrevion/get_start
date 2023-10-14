@@ -1,12 +1,12 @@
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class DetailView extends StatelessWidget {
   const DetailView({Key? key}) : super(key: key);
 
+  // https://dart.dev/tools/diagnostic-messages#unnecessary_non_null_assertion
   _buildBackListTileRow(Map? val) {
-    return val == null
+    return val == null || val["id"] == null
         ? Container()
         : ListTile(
       title: Text("传值 id = " + val["id"].toString()),
@@ -15,12 +15,10 @@ class DetailView extends StatelessWidget {
     );
   }
 
-
   @override
   Widget build(BuildContext context) {
-    final details = Get.arguments;
-    final parameters = Get.parameters;
-
+    Map? details = Get.arguments;
+    Map? parameters = Get.parameters;
 
     return Scaffold(
       appBar: AppBar(

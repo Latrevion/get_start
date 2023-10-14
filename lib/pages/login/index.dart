@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import '../../common/routes/app_pages.dart';
 
+import 'package:get/get.dart';
+import 'package:getx/common/routes/app_pages.dart';
 
 class LoginView extends StatelessWidget {
   const LoginView({Key? key}) : super(key: key);
